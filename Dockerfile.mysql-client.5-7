@@ -1,0 +1,9 @@
+FROM centos:7
+
+RUN yum install -y wget && \
+    wget https://dev.mysql.com/get/mysql-community-client-5.7.16-1.el7.x86_64.rpm && \
+    wget https://dev.mysql.com/get/mysql-community-libs-5.7.9-1.el7.x86_64.rpm && \
+    wget https://dev.mysql.com/get/mysql-community-common-5.7.9-1.el7.x86_64.rpm && \
+    yum localinstall -y mysql-community-common-5.7.9-1.el7.x86_64.rpm && \
+    yum localinstall -y mysql-community-libs-5.7.9-1.el7.x86_64.rpm && \
+    yum localinstall -y mysql-community-client-5.7.16-1.el7.x86_64.rpm
